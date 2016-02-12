@@ -1,0 +1,8 @@
+﻿.css-icon {
+    width: 8px;
+    height: 8px;
+    background: red;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+  }
