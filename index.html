@@ -49,7 +49,14 @@
 				// input marker
 				inputMarkerRadius: 0,
 
-				connectorPointPopUpMessage: "Перетащите эту точку на нужный контейнер"
+				connectorPointPopUpMessage: "Перетащите эту точку на нужный контейнер",
+
+				// стиль иконки input при перетаскивании к нему коннектора
+				inputHoverIcon: L.icon({
+					iconUrl: 'assets/images/icon-input-hover.png',
+					iconSize: [24, 24],
+					iconAnchor: [12, 12],
+				})
 			});
 			
 			// набор тестовых маркеров для соединения
@@ -64,23 +71,38 @@
 				iconSize: [24, 24],
 				iconAnchor: [12, 12],
 			});
+
+			for (var x = 0; x < 500; x ++) {
+				var first = (Math.random() * (1000 + 1000) - 1000) / 100.0;
+				var second = (Math.random() * (1000 + 1000) - 1000) / 100.0;
+				var output = L.marker([39.812 + first, -74.50 + second], {icon: outputIcon}).addTo(map);
+
+				connector.setOutput(output);
+			}
+
+			for (var y = 0; y < 250; y ++) {
+				var first = (Math.random() * (1000 + 1000) - 1000) / 100.0;
+				var second = (Math.random() * (1000 + 1000) - 1000) / 100.0;
+				var input = L.marker([39.812 + first, -74.50 + second], {icon: inputIcon}).addTo(map);
+
+				connector.setInput(input);
+			}
 			
 			// создание маркеров в mapbox
-			var testOutput = L.marker([39.812, -74.50], {icon: outputIcon}).addTo(map);
+			/*var testOutput = L.marker([39.812, -74.50], {icon: outputIcon}).addTo(map);
 			var testOutput1 = L.marker([39.82, -74.57], {icon: outputIcon}).addTo(map);
 			var testOutput2 = L.marker([39.81, -74.46], {icon: outputIcon}).addTo(map);
 			var testOutput3 = L.marker([39.75, -74.60], {icon: outputIcon}).addTo(map);
 			var testOutput4 = L.marker([39.72, -74.58], {icon: outputIcon}).addTo(map);
-			var testInput = L.marker([39.8, -74.55], {icon: inputIcon}).addTo(map);
-			
+			var testInput = L.marker([39.8, -74.55], {icon: inputIcon}).addTo(map);*/
 			
 			// применение функционала соединения к необходимым маркерам
-			connector.setOutput(testOutput);
+			/*connector.setOutput(testOutput);
 			connector.setOutput(testOutput1);
 			connector.setOutput(testOutput2);
 			connector.setOutput(testOutput3);
 			connector.setOutput(testOutput4);
-			connector.setInput(testInput);
+			connector.setInput(testInput);*/
 			
 		</script>
 	</body>
