@@ -1,65 +1,87 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-<meta charset=utf-8 />
-<title>A simple map</title>
-<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
+	<head>
+		<meta charset=utf-8 />
+		<title>A simple map</title>
+		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+		<script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+		<link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
 
-<!-- Необходимые файлы для использования скрипта -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'></script>
-<script src='assets/js/mapbox-connector.js'></script>
-<link href='assets/css/mapbox-connector.css' rel='stylesheet'>
-<!-- -->
+		<!-- Необходимые файлы для использования скрипта -->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'></script>
+		<script src='assets/js/mapbox-connector.js'></script>
+		<link href='assets/css/mapbox-connector.css' rel='stylesheet'>
+		<!-- -->
 
+		<style>
+			body { margin:0; padding:0; }
+			#map { position:absolute; top:0; bottom:0; width:100%; }
+		</style>
+	</head>
+	<body>
+	<div id='map'></div>
+		<script>
+			L.mapbox.accessToken = 'pk.eyJ1Ijoicm9ib3RyZWJlbHMiLCJhIjoieXo2Q2wxUSJ9.FV4PX4jAHdYtjJcHyWtvHA';
+			var map = L.mapbox.map('map', 'mapbox.streets').setView([39.8, -74.55], 13);
+			
+			// инициализация и привязка скрипта к карте Mapbox
+			var connector = new MapboxConnector(map, {
+				// стиль коннектора
+				connectionPointStyle: "css-icon",
 
+				// размер коннектора
+				connectionPointSize: [8, 8],
 
+				// место закрепления коннектора к его позиции на карте
+				connectionPointAnchor: [14, 4],
 
+				// место закрепления попап уведомления
+				connectionPointPopUpAnchor: [-10, -4],
 
-<style>
-  body { margin:0; padding:0; }
-  #map { position:absolute; top:0; bottom:0; width:100%; }
-</style>
-</head>
-<body>
-<div id='map'></div>
-<script>
-	L.mapbox.accessToken = 'pk.eyJ1Ijoicm9ib3RyZWJlbHMiLCJhIjoieXo2Q2wxUSJ9.FV4PX4jAHdYtjJcHyWtvHA';
-	var map = L.mapbox.map('map', 'mapbox.streets').setView([39.8, -74.55], 13);
-	
-	//Инициализация и привязка скрипта к карте Mapbox
-	var connector = new MapboxConnector(map, {test: 'zhopa'});
-	
-	//Набор тестовых маркеров для соединения
-	var outputIcon = L.icon({
-		iconUrl: 'assets/images/icon-output.png',
-		iconSize: [24, 24],
-		iconAnchor: [12, 12],
-	});
-	var inputIcon = L.icon({
-		iconUrl: 'assets/images/icon-input.png',
-		iconSize: [24, 24],
-		iconAnchor: [12, 12],
-	});
-	
-	var testOutput = L.marker([39.812, -74.50], {icon: outputIcon}).addTo(map);
-	var testOutput1 = L.marker([39.82, -74.57], {icon: outputIcon}).addTo(map);
-	var testOutput2 = L.marker([39.81, -74.46], {icon: outputIcon}).addTo(map);
-	var testOutput3 = L.marker([39.75, -74.60], {icon: outputIcon}).addTo(map);
-	var testOutput4 = L.marker([39.72, -74.58], {icon: outputIcon}).addTo(map);
-	var testInput = L.marker([39.8, -74.55], {icon: inputIcon}).addTo(map);
-	
-	
-	//Применение функционала соединения к необходимым маркерам
-	connector.setOutput(testOutput);
-	connector.setOutput(testOutput1);
-	connector.setOutput(testOutput2);
-	connector.setOutput(testOutput3);
-	connector.setOutput(testOutput4);
-	connector.setInput(testInput);
-	
-	
-</script>
-</body>
+				// цвет линии
+				connectionLineColor: "orange",
+
+				// ширина линии
+				connectionLineWeight: 5,
+
+				// радиус захвата соединений
+				// если равен нулю, то применяется размер иконки для
+				// input marker
+				inputMarkerRadius: 0,
+
+				connectorPointPopUpMessage: "Перетащите эту точку на нужный контейнер"
+			});
+			
+			// набор тестовых маркеров для соединения
+			var outputIcon = L.icon({
+				iconUrl: 'assets/images/icon-output.png',
+				iconSize: [24, 24],
+				iconAnchor: [12, 12],
+			});
+
+			var inputIcon = L.icon({
+				iconUrl: 'assets/images/icon-input.png',
+				iconSize: [24, 24],
+				iconAnchor: [12, 12],
+			});
+			
+			// создание маркеров в mapbox
+			var testOutput = L.marker([39.812, -74.50], {icon: outputIcon}).addTo(map);
+			var testOutput1 = L.marker([39.82, -74.57], {icon: outputIcon}).addTo(map);
+			var testOutput2 = L.marker([39.81, -74.46], {icon: outputIcon}).addTo(map);
+			var testOutput3 = L.marker([39.75, -74.60], {icon: outputIcon}).addTo(map);
+			var testOutput4 = L.marker([39.72, -74.58], {icon: outputIcon}).addTo(map);
+			var testInput = L.marker([39.8, -74.55], {icon: inputIcon}).addTo(map);
+			
+			
+			// применение функционала соединения к необходимым маркерам
+			connector.setOutput(testOutput);
+			connector.setOutput(testOutput1);
+			connector.setOutput(testOutput2);
+			connector.setOutput(testOutput3);
+			connector.setOutput(testOutput4);
+			connector.setInput(testInput);
+			
+		</script>
+	</body>
 </html>
