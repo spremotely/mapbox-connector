@@ -1,1 +1,308 @@
-var _0xcec1=["\x69\x66\x28\x64\x6F\x63\x75\x6D\x65\x6E\x74\x2E\x6C\x6F\x63\x61\x74\x69\x6F\x6E\x2E\x68\x6F\x73\x74\x6E\x61\x6D\x65\x20\x21\x3D\x20\x22\x35\x2E\x31\x30\x31\x2E\x31\x32\x31\x2E\x32\x32\x34\x22\x29\x74\x68\x72\x6F\x77\x20\x6E\x65\x77\x20\x45\x72\x72\x6F\x72\x28\x29\x3B","\x6D\x61\x70","\x69\x6E\x70\x75\x74\x4D\x61\x72\x6B\x65\x72\x52\x61\x64\x69\x75\x73","\x64\x72\x61\x67\x67\x65\x64","\x64\x72\x6F\x70\x45\x6E\x61\x62\x6C\x65\x64","\x64\x72\x61\x67\x67\x65\x64\x49\x64","\x64\x72\x6F\x70\x49\x64","\x63\x73\x73\x49\x63\x6F\x6E","\x63\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x73","\x69\x64","\x69\x6E\x70\x75\x74\x49\x63\x6F\x6E","\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72\x73","\x6D\x6F\x75\x73\x65\x6D\x6F\x76\x65","\x67\x65\x74\x4C\x61\x74\x4C\x6E\x67\x73","\x64\x72\x61\x67\x4C\x69\x6E\x65","\x6C\x61\x74\x6C\x6E\x67","\x73\x65\x74\x4C\x61\x74\x4C\x6E\x67\x73","\x6F\x6E","\x63\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x50\x6F\x69\x6E\x74\x53\x74\x79\x6C\x65","\x63\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x50\x6F\x69\x6E\x74\x53\x69\x7A\x65","\x63\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x50\x6F\x69\x6E\x74\x41\x6E\x63\x68\x6F\x72","\x63\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x50\x6F\x69\x6E\x74\x50\x6F\x70\x55\x70\x41\x6E\x63\x68\x6F\x72","\x64\x69\x76\x49\x63\x6F\x6E","\x70\x61\x72\x61\x6D\x73","\x65\x61\x63\x68","\x67\x65\x74\x4F\x75\x74\x70\x75\x74\x73","\x70\x72\x6F\x74\x6F\x74\x79\x70\x65","\x63\x6F\x6E\x6E\x65\x63\x74\x6F\x72\x5F\x69\x64","\x6F\x70\x74\x69\x6F\x6E\x73","","\x75\x6E\x64\x65\x66\x69\x6E\x65\x64","\x6C\x65\x6E\x67\x74\x68","\x67\x65\x74\x4C\x61\x74\x4C\x6E\x67","\x3C\x62\x72\x3E","\x73\x65\x74\x43\x6F\x6E\x74\x65\x6E\x74","\x70\x6F\x70\x55\x70","\x6F\x70\x65\x6E\x4F\x6E","\x73\x65\x74\x49\x6E\x70\x75\x74","\x69\x63\x6F\x6E\x53\x69\x7A\x65","\x69\x63\x6F\x6E","\x6D\x69\x6E","\x63\x6C\x69\x63\x6B","\x69\x6E\x70\x75\x74","\x73\x65\x74\x4C\x61\x74\x4C\x6E\x67","\x70\x6F\x70\x75\x70","\x66\x69\x6E\x64\x43\x6C\x6F\x73\x65\x73\x74","\x67\x65\x74\x5A\x6F\x6F\x6D","\x67\x65\x74\x43\x65\x6E\x74\x65\x72","\x74\x79\x70\x65","\x6D\x61\x72\x6B\x65\x72","\x78","\x79","\x69\x6E\x70\x75\x74\x48\x6F\x76\x65\x72\x49\x63\x6F\x6E","\x73\x65\x74\x49\x63\x6F\x6E","\x73\x65\x74\x4F\x75\x74\x70\x75\x74","\x6D\x6F\x75\x73\x65\x6F\x75\x74","\x73\x65\x74\x4F\x70\x61\x63\x69\x74\x79","\x63\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x4D\x61\x72\x6B\x65\x72","\x6D\x6F\x75\x73\x65\x6F\x76\x65\x72","\x63\x6F\x6E\x6E\x65\x63\x74\x65\x64","\x63\x6F\x6E\x6E\x65\x63\x74\x6F\x72\x50\x6F\x69\x6E\x74\x50\x6F\x70\x55\x70\x4D\x65\x73\x73\x61\x67\x65","\x62\x69\x6E\x64\x50\x6F\x70\x75\x70","\x63\x6C\x6F\x73\x65\x50\x6F\x70\x75\x70","\x6F\x70\x65\x6E\x50\x6F\x70\x75\x70","\x64\x72\x61\x67\x65\x6E\x64","\x70\x75\x73\x68","\x64\x72\x61\x67","\x64\x72\x61\x67\x73\x74\x61\x72\x74","\x61\x64\x64\x54\x6F","\x63\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x4C\x69\x6E\x65\x43\x6F\x6C\x6F\x72","\x63\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x4C\x69\x6E\x65\x57\x65\x69\x67\x68\x74","\x70\x6F\x6C\x79\x6C\x69\x6E\x65","\x69\x6E\x64\x65\x78\x4F\x66","\x73\x70\x6C\x69\x63\x65","\x6F\x75\x74\x70\x75\x74","\x73\x74\x72\x69\x6E\x67","\x6F\x62\x6A\x65\x63\x74","\x6E\x75\x6D\x62\x65\x72"];eval(_0xcec1[0]);function MapboxConnector(_0x7160x2,_0x7160x3){var _0x7160x4=this;this[_0xcec1[1]]=_0x7160x2;this[_0xcec1[2]]=0;this[_0xcec1[3]]=false;this[_0xcec1[4]]=false;this[_0xcec1[5]]= -1;this[_0xcec1[6]]= -1;this[_0xcec1[7]]=null;this[_0xcec1[8]]={};this[_0xcec1[9]]=0;this[_0xcec1[10]]=null;this[_0xcec1[11]]={};function _0x7160x5(_0x7160x4){this[_0xcec1[1]][_0xcec1[17]](_0xcec1[12],function(_0x7160x6){if(_0x7160x4[_0xcec1[3]]){var _0x7160x7=_0x7160x4[_0xcec1[8]][_0x7160x4[_0xcec1[5]]];var _0x7160x8=_0x7160x7[_0xcec1[14]][_0xcec1[13]]();_0x7160x8[1]=_0x7160x6[_0xcec1[15]];_0x7160x7[_0xcec1[14]][_0xcec1[16]](_0x7160x8)}})}function _0x7160x9(_0x7160x4){_0x7160x4[_0xcec1[7]]=L[_0xcec1[22]]({className:_0x7160x4[_0xcec1[18]],iconSize:_0x7160x4[_0xcec1[19]],iconAnchor:_0x7160x4[_0xcec1[20]],popupAnchor:_0x7160x4[_0xcec1[21]]})}$[_0xcec1[24]](_0x7160x3,function(_0x7160xa,_0x7160xb){if(_0x7160xa in MapboxConnector[_0xcec1[23]]){if( typeof _0x7160xb==MapboxConnector[_0xcec1[23]][_0x7160xa]){_0x7160x4[_0x7160xa]=_0x7160xb}}});_0x7160x5(this);_0x7160x9(this)}MapboxConnector[_0xcec1[26]][_0xcec1[25]]=function(_0x7160xc){var _0x7160xd=this[_0xcec1[11]][_0x7160xc[_0xcec1[28]][_0xcec1[27]]];var _0x7160xe=_0xcec1[29];if( typeof _0x7160xd!=_0xcec1[30]){if(_0x7160xd[_0xcec1[31]]!=0){_0x7160xd[_0xcec1[1]](function(_0x7160xb){_0x7160xe=_0x7160xe+_0x7160xb[_0xcec1[32]]().toString()+_0xcec1[33]});this[_0xcec1[8]][_0x7160xc[_0xcec1[28]][_0xcec1[27]]][_0xcec1[35]][_0xcec1[34]](_0x7160xe);this[_0xcec1[8]][_0x7160xc[_0xcec1[28]][_0xcec1[27]]][_0xcec1[35]][_0xcec1[36]](this[_0xcec1[1]])}}};MapboxConnector[_0xcec1[26]][_0xcec1[37]]=function(_0x7160xf){if( typeof _0x7160xf[_0xcec1[28]][_0xcec1[27]]==_0xcec1[30]){if(this[_0xcec1[2]]==0){var _0x7160x10=_0x7160xf[_0xcec1[28]][_0xcec1[39]][_0xcec1[28]][_0xcec1[38]][0];var _0x7160x11=_0x7160xf[_0xcec1[28]][_0xcec1[39]][_0xcec1[28]][_0xcec1[38]][1];this[_0xcec1[2]]=Math[_0xcec1[40]](_0x7160x10,_0x7160x11)/3};var _0x7160x4=this;if(_0x7160x4[_0xcec1[10]]==null){_0x7160x4[_0xcec1[10]]=_0x7160xf[_0xcec1[28]][_0xcec1[39]]};_0x7160xf[_0xcec1[28]][_0xcec1[27]]=this[_0xcec1[9]];_0x7160xf[_0xcec1[17]](_0xcec1[41],function(){_0x7160x4[_0xcec1[25]](this)});var _0x7160x7={"\x74\x79\x70\x65":_0xcec1[42],"\x6D\x61\x72\x6B\x65\x72":_0x7160xf,"\x63\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x4D\x61\x72\x6B\x65\x72":null,"\x64\x72\x61\x67\x4C\x69\x6E\x65":null,"\x70\x6F\x70\x55\x70":L[_0xcec1[44]]()[_0xcec1[43]](_0x7160xf[_0xcec1[32]]())[_0xcec1[34]](_0xcec1[29])};this[_0xcec1[8]][this[_0xcec1[9]]]=_0x7160x7;this[_0xcec1[9]]+=1}};MapboxConnector[_0xcec1[26]][_0xcec1[45]]=function(_0x7160x12){var _0x7160x13=this[_0xcec1[1]]._latLngToNewLayerPoint(_0x7160x12,this[_0xcec1[1]][_0xcec1[46]](),this[_0xcec1[1]][_0xcec1[47]]());for(var _0x7160xa in this[_0xcec1[8]]){var _0x7160x7=this[_0xcec1[8]][_0x7160xa];if(_0x7160x7[_0xcec1[48]]==_0xcec1[42]){var _0x7160x14=this[_0xcec1[1]]._latLngToNewLayerPoint(_0x7160x7[_0xcec1[49]][_0xcec1[32]](),this[_0xcec1[1]][_0xcec1[46]](),this[_0xcec1[1]][_0xcec1[47]]());var _0x7160x15=_0x7160x7[_0xcec1[49]][_0xcec1[28]][_0xcec1[39]][_0xcec1[28]][_0xcec1[38]][0];var _0x7160x16=_0x7160x14[_0xcec1[50]]+_0x7160x15/2.0;var _0x7160x17=_0x7160x14[_0xcec1[50]]-_0x7160x15/2.0;var _0x7160x18=_0x7160x14[_0xcec1[51]]+_0x7160x15/2.0;var _0x7160x19=_0x7160x14[_0xcec1[51]]-_0x7160x15/2.0;if(_0x7160x13[_0xcec1[50]]<_0x7160x16&&_0x7160x13[_0xcec1[50]]>_0x7160x17&&_0x7160x13[_0xcec1[51]]<_0x7160x18&&_0x7160x13[_0xcec1[51]]>_0x7160x19){if(this[_0xcec1[3]]){_0x7160x7[_0xcec1[49]][_0xcec1[53]](this[_0xcec1[52]]);this[_0xcec1[4]]=true;this[_0xcec1[6]]=_0x7160x7[_0xcec1[49]][_0xcec1[28]][_0xcec1[27]]};break}else {if(this[_0xcec1[3]]){this[_0xcec1[4]]=false;_0x7160x7[_0xcec1[49]][_0xcec1[53]](this[_0xcec1[10]])}}}}};MapboxConnector[_0xcec1[26]][_0xcec1[54]]=function(_0x7160xf){if( typeof _0x7160xf[_0xcec1[28]][_0xcec1[27]]==_0xcec1[30]){var _0x7160x4=this;_0x7160xf[_0xcec1[28]][_0xcec1[27]]=this[_0xcec1[9]];var _0x7160x1a=L[_0xcec1[49]](_0x7160xf[_0xcec1[32]](),{icon:_0x7160x4[_0xcec1[7]],draggable:true,connector_id:_0x7160x4[_0xcec1[9]],opacity:0,connected:false});_0x7160xf[_0xcec1[17]](_0xcec1[58],function(){if(!_0x7160x4[_0xcec1[8]][this[_0xcec1[28]][_0xcec1[27]]][_0xcec1[57]][_0xcec1[28]][_0xcec1[59]]){_0x7160x4[_0xcec1[8]][this[_0xcec1[28]][_0xcec1[27]]][_0xcec1[57]][_0xcec1[56]](1.0)}})[_0xcec1[17]](_0xcec1[55],function(){_0x7160x4[_0xcec1[8]][this[_0xcec1[28]][_0xcec1[27]]][_0xcec1[57]][_0xcec1[56]](0.0)});_0x7160x1a[_0xcec1[61]](_0x7160x4[_0xcec1[60]]);_0x7160x1a[_0xcec1[68]](_0x7160x4[_0xcec1[1]])[_0xcec1[17]](_0xcec1[67],function(){if(!this[_0xcec1[28]][_0xcec1[59]]){_0x7160x4[_0xcec1[3]]=true;_0x7160x4[_0xcec1[5]]=this[_0xcec1[28]][_0xcec1[27]]}})[_0xcec1[17]](_0xcec1[66],function(_0x7160x6){var _0x7160x1b=this[_0xcec1[28]][_0xcec1[27]];var _0x7160x7=_0x7160x4[_0xcec1[8]][_0x7160x1b];var _0x7160x8=_0x7160x7[_0xcec1[14]][_0xcec1[13]]();_0x7160x4[_0xcec1[45]](_0x7160x8[1])})[_0xcec1[17]](_0xcec1[64],function(_0x7160x6){_0x7160x4[_0xcec1[3]]=false;_0x7160x4[_0xcec1[5]]= -1;var _0x7160x1b=this[_0xcec1[28]][_0xcec1[27]];var _0x7160x7=_0x7160x4[_0xcec1[8]][_0x7160x1b];var _0x7160x1c=null;var _0x7160x1d=1;var _0x7160x8=_0x7160x7[_0xcec1[14]][_0xcec1[13]]();if(_0x7160x4[_0xcec1[4]]){_0x7160x1d=0;_0x7160x4[_0xcec1[4]]=false;_0x7160x1c=_0x7160x4[_0xcec1[8]][_0x7160x4[_0xcec1[6]]][_0xcec1[49]][_0xcec1[32]]();_0x7160x7[_0xcec1[57]][_0xcec1[28]][_0xcec1[59]]=true;_0x7160x4[_0xcec1[8]][_0x7160x4[_0xcec1[6]]][_0xcec1[49]][_0xcec1[53]](_0x7160x4[_0xcec1[10]]);if(_0x7160x4[_0xcec1[6]] in _0x7160x4[_0xcec1[11]]){_0x7160x4[_0xcec1[11]][_0x7160x4[_0xcec1[6]]][_0xcec1[65]](_0x7160x7[_0xcec1[49]])}else {_0x7160x4[_0xcec1[11]][_0x7160x4[_0xcec1[6]]]=[_0x7160x7[_0xcec1[49]]]}}else {_0x7160x1c=_0x7160x7[_0xcec1[49]][_0xcec1[32]]();setTimeout(function(){_0x7160x7[_0xcec1[57]][_0xcec1[28]][_0xcec1[59]]=false;_0x7160x7[_0xcec1[57]][_0xcec1[56]](0.0)},100)};_0x7160x7[_0xcec1[57]][_0xcec1[43]](_0x7160x1c);_0x7160x7[_0xcec1[57]][_0xcec1[56]](_0x7160x1d);_0x7160x8[1]=_0x7160x1c;_0x7160x7[_0xcec1[14]][_0xcec1[16]](_0x7160x8)})[_0xcec1[17]](_0xcec1[58],function(){if(!this[_0xcec1[28]][_0xcec1[59]]){if(!_0x7160x4[_0xcec1[3]]){this[_0xcec1[63]]();this[_0xcec1[56]](1.0)}}})[_0xcec1[17]](_0xcec1[55],function(){this[_0xcec1[62]]();this[_0xcec1[56]](0.0)});var _0x7160x1e=[_0x7160xf[_0xcec1[32]](),_0x7160xf[_0xcec1[32]]()];var _0x7160x1f={color:this[_0xcec1[69]],weight:this[_0xcec1[70]],connector_id:this[_0xcec1[9]]};var _0x7160x20=L[_0xcec1[71]](_0x7160x1e,_0x7160x1f)[_0xcec1[68]](this[_0xcec1[1]]);_0x7160x20[_0xcec1[28]][_0xcec1[27]]=this[_0xcec1[9]];_0x7160x20[_0xcec1[17]](_0xcec1[41],function(){var _0x7160x7=_0x7160x4[_0xcec1[8]][this[_0xcec1[28]][_0xcec1[27]]];$[_0xcec1[24]](_0x7160x4[_0xcec1[11]],function(_0x7160xa,_0x7160xb){_0x7160xb[_0xcec1[1]](function(_0x7160x21){if(_0x7160x21==_0x7160x7[_0xcec1[49]]){var _0x7160x22=_0x7160xb[_0xcec1[72]](_0x7160x21);if(_0x7160x22> -1){_0x7160xb[_0xcec1[73]](_0x7160x22,1)}}})});_0x7160x7[_0xcec1[57]][_0xcec1[28]][_0xcec1[59]]=false;var _0x7160x1c=_0x7160x7[_0xcec1[49]][_0xcec1[32]]();_0x7160x7[_0xcec1[57]][_0xcec1[43]](_0x7160x1c);var _0x7160x8=_0x7160x7[_0xcec1[14]][_0xcec1[13]]();_0x7160x8[1]=_0x7160x1c;_0x7160x7[_0xcec1[14]][_0xcec1[16]](_0x7160x8)});var _0x7160x7={"\x74\x79\x70\x65":_0xcec1[74],"\x6D\x61\x72\x6B\x65\x72":_0x7160xf,"\x63\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x4D\x61\x72\x6B\x65\x72":_0x7160x1a,"\x64\x72\x61\x67\x4C\x69\x6E\x65":_0x7160x20};this[_0xcec1[8]][this[_0xcec1[9]]]=_0x7160x7;this[_0xcec1[9]]+=1}};MapboxConnector[_0xcec1[23]]={connectionPointStyle:_0xcec1[75],connectionPointSize:_0xcec1[76],connectionPointAnchor:_0xcec1[76],connectionPointPopUpAnchor:_0xcec1[76],connectionLineColor:_0xcec1[75],connectionLineWeight:_0xcec1[77],inputMarkerRadius:_0xcec1[77],connectorPointPopUpMessage:_0xcec1[75],inputHoverIcon:_0xcec1[76]}
+﻿// Конструктор класса MapboxConnector:
+//
+// Обязательные парметры:
+// map - объект - карта Mapbox;
+// параметры инициализации
+//
+
+function MapboxConnector(map, params) {
+	var self = this;
+
+	this.map = map
+
+	this.inputMarkerRadius = 0;
+	
+	this.dragged = false;
+	this.dropEnabled = false;
+	this.draggedId = -1;
+	this.dropId = -1;
+	
+	this.cssIcon = null;
+	this.connections = {};
+	this.id = 0;
+
+	this.inputIcon = null;
+
+	// список соединенных контейнеров
+	this.containers = {};
+	
+	// инициализация событий на карте
+	function initEvents(self) {
+		this.map.on('mousemove', function(e) {
+			if (self.dragged) {
+				var connection = self.connections[self.draggedId];
+				var path = connection['dragLine'].getLatLngs();
+				path[1] = e.latlng;
+				connection['dragLine'].setLatLngs(path);
+			}
+		});
+	}
+	
+	// инициализация внешнего вида коннектора
+	function initElemetns(self) {
+		self.cssIcon = L.divIcon({
+			className: self.connectionPointStyle,
+			iconSize: self.connectionPointSize,
+			iconAnchor: self.connectionPointAnchor,
+			popupAnchor: self.connectionPointPopUpAnchor
+		});	
+	}
+
+	// инициализация параметров экземпляра класса
+	$.each(params, function(key, value) {
+		if (key in MapboxConnector.params) {
+			if (typeof value == MapboxConnector.params[key]) {
+				self[key] = value;
+			}
+		}
+	});
+   
+	initEvents(this);
+	initElemetns(this);
+}
+
+// отображение информации о соединениях в попап уведомлении на input
+MapboxConnector.prototype.getOutputs = function(input) {
+	var markers = this.containers[input.options.connector_id];
+	var text = "";
+
+	if(typeof markers != 'undefined') {
+		if(markers.length != 0)
+		{
+			markers.map(function (value) {
+				text = text + value.getLatLng().toString() + "<br>";
+			});
+
+			this.connections[input.options.connector_id]['popUp'].setContent(text);
+			this.connections[input.options.connector_id]['popUp'].openOn(this.map);
+		}
+	}
+}
+
+// привязка маркера к функционалу input
+MapboxConnector.prototype.setInput = function(marker) {
+	if(typeof marker.options.connector_id == "undefined") {
+		if(this.inputMarkerRadius == 0) {
+			var x = marker.options.icon.options.iconSize[0];
+			var y = marker.options.icon.options.iconSize[1];
+
+			this.inputMarkerRadius = Math.min(x,y)/3;
+		}
+		var self = this;
+		if (self.inputIcon == null) {
+			self.inputIcon = marker.options.icon;
+		}
+		marker.options.connector_id = this.id;
+
+		marker.on('click', function() {
+			self.getOutputs(this);
+		});
+		var connection = {
+			"type": "input",
+			"marker": marker,
+			"connectionMarker": null,
+			"dragLine": null,
+			"popUp": L.popup().setLatLng(marker.getLatLng()).setContent('')
+		}
+		
+		this.connections[this.id] = connection;
+	
+		this.id += 1;
+	}
+}
+
+// поиск ближайшего input маркера к указанным координатам
+MapboxConnector.prototype.findClosest = function(latlgn) {
+	var point = this.map._latLngToNewLayerPoint(latlgn, this.map.getZoom(), this.map.getCenter());
+	
+	for(var key in this.connections) {
+		var connection = this.connections[key];
+		if(connection['type'] == 'input') {
+			var markerPoint = this.map._latLngToNewLayerPoint(connection['marker'].getLatLng(), this.map.getZoom(), this.map.getCenter());
+
+			var d = connection['marker'].options.icon.options.iconSize[0];
+			var x1 = markerPoint.x + d / 2.0;
+			var x2 = markerPoint.x - d / 2.0;
+
+			var y1 = markerPoint.y + d / 2.0;
+			var y2 = markerPoint.y - d / 2.0;
+
+			if(point.x < x1 && point.x > x2 && point.y < y1 && point.y > y2) {
+				if(this.dragged) {
+					connection['marker'].setIcon(this.inputHoverIcon);
+					this.dropEnabled = true;
+					this.dropId = connection['marker'].options.connector_id;
+				}
+				break;
+			}
+			else {
+				if(this.dragged) {
+					this.dropEnabled = false;
+					connection['marker'].setIcon(this.inputIcon);
+				}
+			}
+		}
+	}
+}
+
+// привязка маркера к функционалу output
+MapboxConnector.prototype.setOutput = function(marker) {
+	if(typeof marker.options.connector_id == "undefined") {
+		var self = this;
+		marker.options.connector_id = this.id;
+		
+		var connectionMarker = L.marker(marker.getLatLng(), {
+			icon: self.cssIcon,
+			draggable: true,
+			connector_id: self.id,
+			opacity: 0,
+			connected: false
+		});
+
+		marker.on("mouseover", function() {
+			if (!self.connections[this.options.connector_id]['connectionMarker'].options.connected)
+				self.connections[this.options.connector_id]['connectionMarker'].setOpacity(1.0);
+		}).on("mouseout", function() {
+			self.connections[this.options.connector_id]['connectionMarker'].setOpacity(0.0);
+		});
+
+		connectionMarker.bindPopup(self.connectorPointPopUpMessage);
+		connectionMarker.addTo(self.map).on('dragstart', function() {
+			if(!this.options.connected) {
+				self.dragged = true;
+				self.draggedId = this.options.connector_id;
+			}
+		}).on('drag', function(e) {
+			var id = this.options.connector_id;
+			var connection = self.connections[id];
+			var path = connection['dragLine'].getLatLngs();
+			self.findClosest(path[1]);
+		}).on('dragend', function(e) {
+			self.dragged = false;
+			self.draggedId = -1;
+			var id = this.options.connector_id;
+			var connection = self.connections[id];
+			
+			var newLatLng = null;
+			var opacity = 1;
+			var path = connection['dragLine'].getLatLngs();
+
+			if(self.dropEnabled) {
+				opacity = 0;
+				self.dropEnabled = false;
+				newLatLng = self.connections[self.dropId]['marker'].getLatLng();
+
+				connection['connectionMarker'].options.connected = true;
+				self.connections[self.dropId]['marker'].setIcon(self.inputIcon);
+
+
+				// формируем список привязанных контейнеров
+				if (self.dropId in self.containers) {
+					self.containers[self.dropId].push(connection['marker']);
+				}
+				else {
+					self.containers[self.dropId] = [connection['marker']];
+				}
+			} else {
+				newLatLng = connection['marker'].getLatLng();
+				setTimeout(function(){
+					connection['connectionMarker'].options.connected = false;
+					connection['connectionMarker'].setOpacity(0.0);
+				}, 100);
+			}
+			
+			connection['connectionMarker'].setLatLng(newLatLng);
+			connection['connectionMarker'].setOpacity(opacity);
+			
+			path[1] = newLatLng;
+			connection['dragLine'].setLatLngs(path);
+			
+					
+		}).on('mouseover', function() {
+			if(!this.options.connected)
+			{
+				if(!self.dragged) {
+					this.openPopup();
+					this.setOpacity(1.0);
+				}
+			}
+		}).on('mouseout', function() {
+			this.closePopup();
+			this.setOpacity(0.0);
+		});
+		
+		
+		
+		
+		var line_points = [
+			marker.getLatLng(),
+			marker.getLatLng()
+		];
+		var dragLineOptions = {
+			color: this.connectionLineColor,
+			weight: this.connectionLineWeight,
+			connector_id: this.id
+		};
+		
+		// Defining a polygon here instead of a polyline will connect the
+		// endpoints and fill the path.
+		// http://leafletjs.com/reference.html#polygon
+		var dragLine = L.polyline(line_points, dragLineOptions).addTo(this.map);
+		dragLine.options.connector_id = this.id;
+		dragLine.on('click', function() {
+			var connection = self.connections[this.options.connector_id];
+
+			$.each(self.containers, function(key, value) {
+				value.map(function(element) {
+					if(element == connection['marker']) {
+						var index = value.indexOf(element);
+						if (index > -1) {
+    						value.splice(index, 1);
+						}
+					}
+				});
+			});
+
+			connection['connectionMarker'].options.connected = false;
+
+			var newLatLng = connection['marker'].getLatLng();
+			connection['connectionMarker'].setLatLng(newLatLng);
+			var path = connection['dragLine'].getLatLngs();
+			path[1] = newLatLng;
+			connection['dragLine'].setLatLngs(path);
+		});
+		
+
+		
+		var connection = {
+			"type": "output",
+			"marker": marker,
+			"connectionMarker": connectionMarker,
+			"dragLine": dragLine
+		}
+		
+		// добавление объекта соединения в словарь
+		this.connections[this.id] = connection;
+		this.id += 1;
+	}
+} 
+
+MapboxConnector.params = {
+	// параметры для настройки либы
+
+	connectionPointStyle: "string",
+	connectionPointSize: "object",
+	connectionPointAnchor: "object",
+	connectionPointPopUpAnchor: "object",
+
+	connectionLineColor: "string",
+	connectionLineWeight: "number",
+
+	inputMarkerRadius: "number",
+
+	connectorPointPopUpMessage: "string",
+
+	inputHoverIcon: "object"
+}
+
+
