@@ -160,7 +160,7 @@ MapboxConnector.prototype.setOutput = function(marker) {
 		});
 
 		marker.on("mouseover", function() {
-			if (!self.connections[this.options.connector_id]['connectionMarker'].options.connected)
+			//if (!self.connections[this.options.connector_id]['connectionMarker'].options.connected)
 				self.connections[this.options.connector_id]['connectionMarker'].setOpacity(1.0);
 		}).on("mouseout", function() {
 			self.connections[this.options.connector_id]['connectionMarker'].setOpacity(0.0);
@@ -168,10 +168,10 @@ MapboxConnector.prototype.setOutput = function(marker) {
 
 		connectionMarker.bindPopup(self.connectorPointPopUpMessage);
 		connectionMarker.addTo(self.map).on('dragstart', function() {
-			if(!this.options.connected) {
+			//if(!this.options.connected) {
 				self.dragged = true;
 				self.draggedId = this.options.connector_id;
-			}
+			//}
 		}).on('drag', function(e) {
 			var id = this.options.connector_id;
 			var connection = self.connections[id];
@@ -216,8 +216,13 @@ MapboxConnector.prototype.setOutput = function(marker) {
 			
 			path[1] = newLatLng;
 			connection['dragLine'].setLatLngs(path);
-			
-					
+
+			for(var key in self.connections) {
+				var connection = self.connections[key];
+				if(connection['type'] == 'input') {
+					connection['marker'].setIcon(self.inputIcon);
+				}
+			}		
 		}).on('mouseover', function() {
 			if(!this.options.connected)
 			{
