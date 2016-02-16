@@ -79,6 +79,24 @@ MapboxConnector.prototype.getOutputs = function(input) {
 	}
 }
 
+
+MapboxConnector.prototype.ifConnected = function(input, output) {
+	var res = false;
+	var self = this;
+	
+	$.each(self.containers, function(key, value) {
+		if(key == input.options.connector_id) {
+			value.map(function(element) {
+				if(element == output) {
+					res = true;
+				}
+			});
+		}
+	});
+	
+	return res;
+}
+
 // привязка маркера к функционалу input
 MapboxConnector.prototype.setInput = function(marker) {
 	if(typeof marker.options.connector_id == "undefined") {
@@ -112,7 +130,7 @@ MapboxConnector.prototype.setInput = function(marker) {
 }
 
 // поиск ближайшего input маркера к указанным координатам
-MapboxConnector.prototype.findClosest = function(latlgn) {
+MapboxConnector.prototype.findClosest = function(latlgn, output) {
 	var point = this.map._latLngToNewLayerPoint(latlgn, this.map.getZoom(), this.map.getCenter());
 	
 	for(var key in this.connections) {
@@ -129,9 +147,11 @@ MapboxConnector.prototype.findClosest = function(latlgn) {
 
 			if(point.x < x1 && point.x > x2 && point.y < y1 && point.y > y2) {
 				if(this.dragged) {
-					connection['marker'].setIcon(this.inputHoverIcon);
-					this.dropEnabled = true;
-					this.dropId = connection['marker'].options.connector_id;
+					if( !this.ifConnected(connection['marker'], output)) {
+						connection['marker'].setIcon(this.inputHoverIcon);
+						this.dropEnabled = true;
+						this.dropId = connection['marker'].options.connector_id;
+					}
 				}
 				break;
 			}
@@ -155,28 +175,30 @@ MapboxConnector.prototype.setOutput = function(marker) {
 			icon: self.cssIcon,
 			draggable: true,
 			connector_id: self.id,
-			opacity: 0,
-			connected: false
+			opacity: 0
 		});
+		
+		var dragLineOptions = {
+			color: this.connectionLineColor,
+			weight: this.connectionLineWeight,
+			connector_id: this.id
+		};
 
 		marker.on("mouseover", function() {
-			//if (!self.connections[this.options.connector_id]['connectionMarker'].options.connected)
-				self.connections[this.options.connector_id]['connectionMarker'].setOpacity(1.0);
+			self.connections[this.options.connector_id]['connectionMarker'].setOpacity(1.0);
 		}).on("mouseout", function() {
 			self.connections[this.options.connector_id]['connectionMarker'].setOpacity(0.0);
 		});
 
 		connectionMarker.bindPopup(self.connectorPointPopUpMessage);
 		connectionMarker.addTo(self.map).on('dragstart', function() {
-			//if(!this.options.connected) {
-				self.dragged = true;
-				self.draggedId = this.options.connector_id;
-			//}
+			self.dragged = true;
+			self.draggedId = this.options.connector_id;
 		}).on('drag', function(e) {
 			var id = this.options.connector_id;
 			var connection = self.connections[id];
 			var path = connection['dragLine'].getLatLngs();
-			self.findClosest(path[1]);
+			self.findClosest(path[1], connection['marker']);
 		}).on('dragend', function(e) {
 			self.dragged = false;
 			self.draggedId = -1;
@@ -192,29 +214,55 @@ MapboxConnector.prototype.setOutput = function(marker) {
 				self.dropEnabled = false;
 				newLatLng = self.connections[self.dropId]['marker'].getLatLng();
 
-				connection['connectionMarker'].options.connected = true;
 				self.connections[self.dropId]['marker'].setIcon(self.inputIcon);
+				
+				
+				if( !self.ifConnected(self.connections[self.dropId]['marker'], connection['marker'])) {
+					// добавление линии соединения на карту
+					var points = path;
+					points[1] = newLatLng;
+					
+					var connectLine = L.polyline(points, dragLineOptions).addTo(self.map);
+					connectLine.options.container_id = self.dropId;
+					connectLine.on('click', function() {
+						var connection = self.connections[this.options.connector_id];
+						var containerId = this.options.container_id;
+						$.each(self.containers, function(key, value) {
+							if(containerId == key) {
+								value.map(function(element) {
+									if(element == connection['marker']) {
+										var index = value.indexOf(element);
+										if (index > -1) {
+											value.splice(index, 1);
+										}
+									}
+								});
+							}
+						});
+						
+						self.map.removeLayer(this);
+					});
 
-
-				// формируем список привязанных контейнеров
-				if (self.dropId in self.containers) {
-					self.containers[self.dropId].push(connection['marker']);
-				}
-				else {
-					self.containers[self.dropId] = [connection['marker']];
+					// добавление в список привязанных контейнеров
+					if (self.dropId in self.containers) {
+						self.containers[self.dropId].push(connection['marker']);
+					}
+					else {
+						self.containers[self.dropId] = [connection['marker']];
+					}
 				}
 			} else {
 				newLatLng = connection['marker'].getLatLng();
-				setTimeout(function(){
-					connection['connectionMarker'].options.connected = false;
-					connection['connectionMarker'].setOpacity(0.0);
+				var tmp = connection['connectionMarker'];
+				setTimeout( function() {
+					tmp.setOpacity(0.0);
 				}, 100);
 			}
 			
-			connection['connectionMarker'].setLatLng(newLatLng);
+			connection['connectionMarker'].setLatLng(connection['marker'].getLatLng());
 			connection['connectionMarker'].setOpacity(opacity);
 			
-			path[1] = newLatLng;
+			path[1] = connection['marker'].getLatLng();
 			connection['dragLine'].setLatLngs(path);
 
 			for(var key in self.connections) {
@@ -224,12 +272,9 @@ MapboxConnector.prototype.setOutput = function(marker) {
 				}
 			}		
 		}).on('mouseover', function() {
-			if(!this.options.connected)
-			{
-				if(!self.dragged) {
-					this.openPopup();
-					this.setOpacity(1.0);
-				}
+			if(!self.dragged) {
+				this.openPopup();
+				this.setOpacity(1.0);
 			}
 		}).on('mouseout', function() {
 			this.closePopup();
@@ -243,40 +288,12 @@ MapboxConnector.prototype.setOutput = function(marker) {
 			marker.getLatLng(),
 			marker.getLatLng()
 		];
-		var dragLineOptions = {
-			color: this.connectionLineColor,
-			weight: this.connectionLineWeight,
-			connector_id: this.id
-		};
-		
+
 		// Defining a polygon here instead of a polyline will connect the
 		// endpoints and fill the path.
 		// http://leafletjs.com/reference.html#polygon
 		var dragLine = L.polyline(line_points, dragLineOptions).addTo(this.map);
 		dragLine.options.connector_id = this.id;
-		dragLine.on('click', function() {
-			var connection = self.connections[this.options.connector_id];
-
-			$.each(self.containers, function(key, value) {
-				value.map(function(element) {
-					if(element == connection['marker']) {
-						var index = value.indexOf(element);
-						if (index > -1) {
-    						value.splice(index, 1);
-						}
-					}
-				});
-			});
-
-			connection['connectionMarker'].options.connected = false;
-
-			var newLatLng = connection['marker'].getLatLng();
-			connection['connectionMarker'].setLatLng(newLatLng);
-			var path = connection['dragLine'].getLatLngs();
-			path[1] = newLatLng;
-			connection['dragLine'].setLatLngs(path);
-		});
-		
 
 		
 		var connection = {
